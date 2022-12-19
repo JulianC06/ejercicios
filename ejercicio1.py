@@ -3,6 +3,8 @@ newList=list()
 
 #función para eliminar los números según sea el limite que se ingrese por parámetro
 def deleteNumbersInLimit(listNumbers,limitS):
+
+    listNumbers=orderReverse(listNumbers)
     
     #solo se agrega el número una vez. Ej. para limit 6, el número 596 entraría dos veces, entonces con esta variable
     #se limita a que entre una sola vez.
@@ -32,5 +34,16 @@ def divisibleNumber(number, limitS):
         if(int(numberStr)<limitS):
             newList.append(int(numberStr))
 
+def orderReverse(listNumbers):
+    reverseLIst=list()
+   
+    for i in range(len(listNumbers)+1):
+        if(i!=0):
+            reverseLIst.append(listNumbers[-i])
+    return reverseLIst
 
-deleteNumbersInLimit([10,20,30,40,60,66],6)
+deleteNumbersInLimit([60, 6, 5, 4, 3, 2, 7, 7, 29, 1],2)
+#array1=[1,2,3,4]
+
+#array1.reverse()
+#print(orderReverse(array1))
